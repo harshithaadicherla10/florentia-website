@@ -1,0 +1,666 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florentia Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Puppies+Play&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== GLOBAL ========== */
+    html, body {
+    overflow-x: hidden;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff6e3;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background-color: rgba(250, 244, 235, 0.85);   /* soft cream */
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-family: 'Puppies play';
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #2c2c2c !important;
+}
+
+.nav-link {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #5a5a5a !important;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #b58e5f !important;
+    text-decoration: underline;
+}
+
+.active-link {
+    color: #8d6e48;
+    font-weight: bold;
+    /* padding-bottom: 5px; */
+    /* text-decoration: underline; */
+} 
+/* Shopping bag */
+.bag-icon {
+    font-size: 20px;
+    color: #333;
+}
+
+
+    /* Remove border */
+    .navbar-toggler {
+      border: none !important;
+      transition: background-color 0.3s ease;
+      padding: 6px 10px;
+      border-radius: 6px;
+      /* Slight rounded look */
+    }
+
+    /* Remove blue outline */
+    .navbar-toggler:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Default icon color (dark) */
+    .custom-toggler .navbar-toggler-icon {
+      filter: invert(28%) sepia(23%) saturate(800%) hue-rotate(100deg);
+    }
+
+    /* 🔥 When menu is open → background green */
+    .custom-toggler[aria-expanded="true"] {
+      background-color: rgb(138, 99, 66);
+    }
+
+    /* When open → make icon white for contrast */
+    .custom-toggler[aria-expanded="true"] .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
+
+    }
+
+    /* navbar brand and icon */
+    .navbar-brand {
+      font-size: 22px;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar-brand:hover .brand-icon {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+/* ========== Home SECTION ========== */
+.home {
+    height: 100vh;
+    background: url("/images/fresh-red-tulips-flower-bouquet.jpg") center/cover no-repeat;
+    text-align: center;
+    background-attachment: fixed;
+    border: none;
+    padding: 12px 35px;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: 0.3s;
+    margin-top: 60px;
+}
+
+.home-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: 1px;
+}
+
+.home-para {
+    font-size: 15px;
+    margin: 20px 0;
+    font-weight: 300;
+}
+
+    .btn{
+      background-color: rgb(252, 240, 225);
+      border: none;
+      font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+    border-radius: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px;
+    }
+    .btn:hover{
+      background-color: #986e4c;
+      color: rgb(244, 222, 206);
+    }
+
+
+
+ /* ========== why SECTION ==== */
+
+
+.why-section {
+    padding: 20px 20px 40px;
+    text-align: center;
+}
+
+.why-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    font-weight: 500;
+    color: #2b2b2b;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.why-para {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.9;
+    color: #353434;
+    max-width: 620px;
+    margin: 0 20px 40px;
+    text-align: center;
+}
+
+.why-card {
+    position: relative;
+    margin-bottom: 0px;
+}
+
+.why-card img {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    max-height: 350px;
+    border-radius: 20px;
+}
+
+.why-box {
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    width: 70%;
+    background: #f8ebd7;
+    margin: -50px auto 0;       
+    padding: 10px 10px;
+    border-radius: 16px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    text-align: center;
+}
+
+.why-box h5 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.why-box p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 15px;
+    line-height: 1.8;
+    color: #343434;
+}
+
+/* =============================== */
+/* TOP PICKS SECTION */
+/* =============================== */
+
+.top-picks{
+    background-color: #7a4a34;   /* rich brown */
+    padding: 60px 0 60px;
+    color: #fff;   
+}
+
+/* Fix mobile spacing */
+@media (max-width: 768px) {
+
+    .top-picks .container {
+        padding-left: 50px;
+        padding-right: 50px;
+    }
+
+    .pick-card img {
+        width: 100%;
+        border-radius: 18px;
+    }
+
+}
+
+/* Title */
+.picks-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 35px;
+    /* font-weight: 500; */
+    margin-bottom: 20px;
+}
+
+/* Subtitle */
+.picks-subtitle {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    opacity: 0.9;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Card */
+.pick-card {
+    transition: 0.3s ease;
+    text-align: center;
+}
+
+.pick-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: obtain;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    display: block;
+
+}
+
+/* Card Title */
+.pick-card h4 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px;
+    font-weight: 500;
+    color: #f3e8dc;
+}
+
+/* Hover effect */
+.pick-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ============================= */
+/* TESTIMONIAL SECTION */
+/* ============================= */
+
+.testimonial-section {
+    background-color: #e8dcc7;   /* soft cream */
+    padding: 50px 50px;
+    text-align: center;
+}
+
+/* Stars */
+.stars {
+    font-size: 22px;
+    letter-spacing: 6px;
+    color: #1f1f1f;
+    margin-bottom: 30px;
+}
+
+/* Text */
+.testimonial-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    color: #2b2b2b;
+}
+
+/* Profile */
+.testimonial-profile img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+/* Name */
+.testimonial-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #2b2b2b;
+}
+
+/* ============================= */
+/* NEWSLETTER SECTION */
+/* ============================= */
+.newsletter-section {
+    background-color: #1f2535;
+    color: #fff;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+/* Title */
+.newsletter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Text */
+.newsletter-text {
+    max-width: 520px;
+    margin: 0 auto 35px;
+    line-height: 1.8;
+}
+
+/* FORM WRAPPER */
+.newsletter-form {
+    max-width: 420px;   /* 🔥 Important */
+    margin: 0 auto;
+}
+
+/* Input */
+.newsletter-input {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: none;
+    background-color: #fef9f0;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.newsletter-btn {
+    width: 180px;        /* 🔥 smaller button */
+    padding: 12px;
+    border-radius: 14px;
+    border: none;
+    background-color: #e6dac4;
+    font-weight: 500;
+}
+
+.newsletter-btn:hover{
+      background-color: #986e4c;
+      color: rgb(244, 222, 206);
+}
+
+ 
+  </style>
+</head>
+
+<body>
+  <!-- ================= NAVBAR ===================== -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid ms-4">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">Florentia</a>
+
+      <!-- Toggle button (Mobile) -->
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav gap-4 ms-auto me-5">
+          <li class="nav-item">
+            <a class="nav-link active" href="#Home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html">Store</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Shopping Bag Icon -->
+      <div class="d-none d-lg-block">
+        <a href="#" class="bag-icon">
+          <i class="bi bi-bag"></i>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ============ Home ============= -->
+  <section id="Home" class="home d-flex flex-column justify-content-center align-items-center">
+    <h1 class="fw-bold text-white text-center home-title">Your Sustainable <br>
+      Flower Shop</h1>
+    <p class="text-white home-para">Where Every Blossom Tells a Story</p>
+    <button class="btn btn-light">Find Your Flower</button>
+  </section>
+
+  <br>
+  
+<section class="why-section">
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <h2 class="why-title">Why Choose Us</h2>
+        <p class="why-para">
+          Because flowers should do more than look beautiful—they should feel meaningful,
+          smell unforgettable, and arrive like a promise kept.
+        </p>
+      </div>
+    </div>
+
+    <div class="row g-5">
+
+      <!-- Card 1 -->
+      <div class="col-lg-6">
+        <div class="why-card">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=984,fit=crop/fiorentiaYKb8v/pexels-nietjuhart-1906446-mv0Jvx7oNoSB3oz6.jpg" alt="Not-found">
+          <div class="why-box">
+            <h5>🌸 Scents That Stay</h5>
+            <p>
+              Our blooms don’t just brighten the room—they linger. Grown naturally and harvested at peak freshness, their perfume lasts for days, turning every vase into a memory.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-lg-6">
+        <div class="why-card">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=984,fit=crop,trim=118.6270022883295;0;934.1876430205949;0/fiorentiaYKb8v/pexels-darya-gryazeva-73722285-8534094-2-A3Q7z1lyRGtX5w0v.jpg" alt="Not-found">
+          <div class="why-box">
+            <h5>🎀 Personal Touches, Always</h5>
+            <p>
+              From handwritten cards to custom ribbons, we make every bouquet feel like it was made just for her—because it was.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-lg-6">
+        <div class="why-card">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=984,fit=crop/fiorentiaYKb8v/zoe-richardson-eoaubhpm6h8-unsplash-d954bEKlwDi785nP.jpg" alt="Not-found">
+          <div class="why-box">
+            <h5>🌍 Giving Back With Every Bloom</h5>
+            <p>
+              A portion of every purchase supports local sustainability programs that protect our region’s soil, water, and biodiversity. When you gift beauty, you grow it too.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-lg-6">
+        <div class="why-card">
+          <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=984,fit=crop/fiorentiaYKb8v/zoe-richardson-oy7njng-ck4-unsplash-d954bEK1eDtpRr9X.jpg" alt="Not-Found">
+          <div class="why-box">
+            <h5>♻️ Kind to the Earth</h5>
+            <p>
+              We use biodegradable packaging and eco-conscious materials—because love shouldn’t leave a footprint.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- =========== Top picks ========== -->
+
+  <section class="top-picks">
+  <div class="container text-center">
+
+    <!-- Heading -->
+    <h2 class="picks-title">
+      Top Picks for Who Deserve the World
+    </h2>
+
+    <p class="picks-subtitle">
+      Flowers speak when words fall short.<br>
+      They're the silent ambassadors of love, gratitude, and celebration.
+    </p>
+
+    <!-- Cards -->
+    <div class="row g-4 mt-5">
+
+      <div class="col-lg-3 col-md-6 col-lg-3">
+        <div class="pick-card">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=1474,fit=crop,trim=89.12621359223301;62.873786407766985;477.0873786407767;0/fiorentiaYKb8v/robin-baral-o0yvkmrtpcm-unsplash-AMq8OX4rloioDqPn.jpg"
+              alt="not-found" >
+            <h4>My Queen</h4>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-lg-3">
+        <div class="pick-card">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=1474,fit=crop,trim=344.1509433962264;49.81132075471698;443.77358490566036;49.81132075471698/fiorentiaYKb8v/evie-fjord-nr3hetf3o1u-unsplash-Awv9zLkGEZs9405j.jpg"
+              alt="not-found" >
+            <h4>She Blooms</h4>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-lg-3">
+        <div class="pick-card">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=1474,fit=crop,trim=323.59550561797755;153.70573566084786;606.7415730337079;266.96259351620944/fiorentiaYKb8v/evie-fjord-qrnl7ljcb18-unsplash-dOqDLX49Erc8X3kZ.jpg"
+              alt="not-found" >
+            <h4>The Special</h4>
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-6 col-lg-3">
+        <div class="pick-card">
+            <img
+              src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=1474,fit=crop,trim=505.09505703422053;176.9142857142857;406.5399239543726;41.14285714285714/fiorentiaYKb8v/russell-brooks-j7yftzu8uig-unsplash-Awv9zLM1z3TBEzbB.jpg"
+              alt="not-found" >
+            <h4>Love, Loudly</h4>
+          </div>
+        </div>
+      </div>
+      <button type="button" class="btn btn-light m-5">DISCOVER MORE</button>
+    </div>
+  </section>
+
+  <!-- ================= TESTIMONIAL SECTION ============-->  
+
+  <section class="testimonial-section">
+  <div class="container text-center">
+
+    <!-- Stars -->
+    <div class="stars">
+      ★★★★★
+    </div>
+
+    <!-- Testimonial Text -->
+    <p class="testimonial-text">
+      Beautiful bouquet, delivered right on time for my mom's special day.
+      She loved it—and so did I. Thank you for making it perfect!
+    </p>
+    <!-- Profile Image -->
+    <div class="testimonial-profile">
+    <img class="img rounded-circle"
+      src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=1440,fit=crop,trim=178.02197802197801;1795.9007352941178;1032.5274725274726;487.62867647058823/fiorentiaYKb8v/pexels-pavel-danilyuk-7881286-mxBXqjV1vnS2PzKl.jpg"
+      alt="not-found">
+    </div>
+    <!-- Name -->
+    <h5 class="testimonial-name">Daisy Bloom</h5>
+
+  </div>
+</section>
+
+<!-- ========= NEWSLETTER SECTION ============ -->
+
+  <section id="contact" class="newsletter-section py-5">
+  <div class="container">
+
+    <div class="row align-items-start gy-5">
+
+      <!-- LEFT SIDE -->
+      <div class="col-12 col-lg-7 text-center text-lg-start">
+
+        <h2 class="newsletter-title mb-3">
+          Join Our Bloom Letter
+        </h2>
+
+        <p class="newsletter-text mb-4">
+          Get fresh bouquet drops, plant care tips, exclusive discounts,
+          and more—delivered with love to your inbox.
+        </p>
+
+        <!-- FORM -->
+        <form class="newsletter-form mx-auto text-center ">
+          <input type="email"
+                 class="newsletter-input"
+                 placeholder="Your email address">
+
+          <button tpe="submit" class="newsletter-btn">
+            Submit
+          </button>
+        </form>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="col-12 col-lg-5 text-center text-lg-start">
+
+        <div class="mb-4">
+          <h5 class="mb-3">Contacts</h5>
+          <p class="mb-1">273 314 268</p>
+          <p class="mb-0">info@fiorentia.io</p>
+        </div>
+
+        <div>
+          <h5 class="mb-3">Social</h5>
+          <div class="d-flex justify-content-center justify-content-lg-start gap-3">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

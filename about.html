@@ -1,0 +1,649 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florentia Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Puppies+Play&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== GLOBAL ========== */
+    html, body {
+    overflow-x: hidden;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff6e3;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background-color: rgba(250, 244, 235, 0.85);   /* soft cream */
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-family: 'Puppies play';
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #2c2c2c !important;
+}
+
+.nav-link {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #5a5a5a !important;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #b58e5f !important;
+    text-decoration: underline;
+}
+
+.active-link {
+    color: #8d6e48;
+    font-weight: bold;
+    /* padding-bottom: 5px; */
+    /* text-decoration: underline; */
+} 
+/* Shopping bag */
+.bag-icon {
+    font-size: 20px;
+    color: #333;
+}
+
+
+    /* Remove border */
+    .navbar-toggler {
+      border: none !important;
+      transition: background-color 0.3s ease;
+      padding: 6px 10px;
+      border-radius: 6px;
+      /* Slight rounded look */
+    }
+
+    /* Remove blue outline */
+    .navbar-toggler:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Default icon color (dark) */
+    .custom-toggler .navbar-toggler-icon {
+      filter: invert(28%) sepia(23%) saturate(800%) hue-rotate(100deg);
+    }
+
+    /* 🔥 When menu is open → background green */
+    .custom-toggler[aria-expanded="true"] {
+      background-color: rgb(138, 99, 66);
+    }
+
+    /* When open → make icon white for contrast */
+    .custom-toggler[aria-expanded="true"] .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
+
+    }
+
+    /* navbar brand and icon */
+    .navbar-brand {
+      font-size: 22px;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar-brand:hover .brand-icon {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+/* ============== HERO SECTION ================ */
+.hero-video {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    margin-top: 60px;
+}
+
+/* Background Video */
+.hero-bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: 1;
+}
+
+/* Dark Overlay */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.35);
+    z-index: 2;
+}
+
+/* Content Center */
+.hero-content {
+    position: relative;
+    z-index: 3;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    padding: 0 20px;
+    color: #fff;
+}
+
+/* Heading */
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 50px;
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 25px;
+}
+
+/* Sub Text */
+.hero-content p {
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+/* ============ INTRO SECTION ============= */
+.intro-section {
+    background: #f2efe6;
+    padding: 80px 20px;
+}
+
+.intro-content {
+    max-width: 1100px;
+}
+
+.intro-section h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 48px;
+    line-height: 1.4;
+    color: #1f2535;
+}
+
+ /* ============ MISSION SECTION ==========  */
+
+ .mission-section {
+    background: #f2efe6;
+    padding: 10px 10px;
+}
+
+.mission-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 80px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.mission-text {
+    flex: 1;
+}
+
+.mission-text h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 40px;
+    margin-bottom: 30px;
+}
+
+.mission-text p {
+    line-height: 1.8;
+    color: #444;
+}
+
+.mission-image {
+    flex: 1;
+}
+
+.mission-image img {
+    width: 100%;
+    border-radius: 18px;
+}
+
+/* <!-- ============ VALUES SECTION ========== --> */
+
+.values-section {
+    background: #f2efe6;
+    padding: 100px 20px;
+}
+
+.values-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 42px;
+    margin-bottom: 60px;
+}
+
+.values-grid {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.value-card {
+    background: #e8dfc9;
+    padding: 50px 40px;
+    border-radius: 6px;
+    width: 320px;
+}
+
+.value-card h4 {
+    font-family: 'Playfair Display', serif;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.value-card p {
+    line-height: 1.7;
+    color: #444;
+}
+
+/* =========== Sustainability Section ================ */
+.sustainability-section {
+    background: #efe7d6;
+    padding: 120px 20px;
+}
+
+.sustainability-wrapper {
+    display: flex;
+    gap: 100px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sustain-left {
+    flex: 1;
+}
+
+.sustain-left h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    line-height: 1.1;
+}
+
+.sustain-right {
+    flex: 1;
+}
+
+.sustain-right p {
+    margin-bottom: 25px;
+    line-height: 1.8;
+    color: #444;
+}
+
+/* Stats */
+.sustain-stats {
+    display: flex;
+    gap: 80px;
+    margin-top: 40px;
+}
+
+.sustain-stats h3 {
+    font-size: 50px;
+    color: #c08c6d;
+    margin-bottom: 5px;
+}
+
+.sustain-stats span {
+    color: #444;
+}
+
+.sustain-image-section {
+    background: #efe7d6;
+    padding: 0 20px 120px;
+}
+
+.sustain-image-wrapper {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sustain-image-wrapper img {
+    width: 100%;
+    border-radius: 20px;
+    display: block;
+}
+
+/* section {
+    scroll-margin-top: 100px;
+} */
+
+/* ============================= */
+/* NEWSLETTER SECTION */
+/* ============================= */
+.newsletter-section {
+    background-color: #1f2535;
+    color: #fff;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+/* Title */
+.newsletter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Text */
+.newsletter-text {
+    max-width: 520px;
+    margin: 0 auto 35px;
+    line-height: 1.8;
+}
+
+/* FORM WRAPPER */
+.newsletter-form {
+    max-width: 420px;   /* 🔥 Important */
+    margin: 0 auto;
+}
+
+/* Input */
+.newsletter-input {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: none;
+    background-color: #fef9f0;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.newsletter-btn {
+    width: 180px;        /* 🔥 smaller button */
+    padding: 12px;
+    border-radius: 14px;
+    border: none;
+    background-color: #e6dac4;
+    font-weight: 500;
+}
+
+.newsletter-btn:hover{
+      background-color: #986e4c;
+      color: rgb(244, 222, 206);
+}
+</style>
+</head>
+
+<body>
+  <!-- ================= NAVBAR ===================== -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid ms-4">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">Florentia</a>
+
+      <!-- Toggle button (Mobile) -->
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav gap-4 ms-auto me-5">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#About">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="store.html">Store</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Shopping Bag Icon -->
+      <div class="d-none d-lg-block">
+        <a href="#" class="bag-icon">
+          <i class="bi bi-bag"></i>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+
+<!-- HOME SECTION -->
+<section class="hero-video">
+
+    <video autoplay muted loop playsinline class="hero-bg-video">
+        <source src="video1/flower.mp4" type="video/mp4">
+    </video>
+
+    <div class="hero-overlay"></div>
+
+    <div class="hero-content">
+        <h1>
+            Petal by Petal,<br>
+            We Grow With Purpose
+        </h1>
+
+        <p>
+            A poetic nod to sustainability and connection to land
+        </p>
+    </div>
+
+</section>
+
+<!-- ============ INTRO SECTION ========== -->
+<section class="intro-section">
+  <div class="container intro-content">
+    <h2>
+      Welcome to a flower shop rooted in purpose.
+      We believe nature tells its own story—and we’re here
+      to listen, honor, and bloom alongside it.
+    </h2>
+  </div>
+</section>
+
+<!-- ============ MISSION SECTION ========== -->
+
+<section class="mission-section">
+  <div class="container mission-wrapper">
+
+    <div class="mission-text">
+      <h3>Our Mission</h3>
+      <p>
+        To create moments of joy through ethically grown,
+        seasonally curated flowers—while nurturing the land that
+        gives them life. Every bouquet we craft is a quiet
+        celebration of connection: between soil and soul, season
+        and sentiment, beauty and balance.
+      </p>
+    </div>
+
+    <div class="mission-image">
+      <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=1440,h=1179,fit=crop,trim=116.43564356435643;0;867.3267326732673;0/fiorentiaYKb8v/zoe-richardson-4uxinndjmuc-unsplash-AQEZ5XpyaZIkrQew.jpg" alt="Florist holding flowers">
+    </div>
+
+  </div>
+</section>
+
+<!-- ============ VALUES SECTION ========== -->
+
+<section class="values-section">
+  <div class="container text-center">
+
+    <h3 class="values-title">Our Values</h3>
+
+    <div class="values-grid">
+
+      <div class="value-card">
+        <h4>Respect</h4>
+        <p>
+          For nature, for our community,
+          and for the hands that help our
+          flowers reach yours
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h4>Empowerment</h4>
+        <p>
+          We uplift our team, our growers,
+          and our customers by fostering
+          trust, knowledge-sharing, and
+          creativity
+        </p>
+      </div>
+
+      <div class="value-card">
+        <h4>Accountability</h4>
+        <p>
+          Every stem we offer is backed
+          by transparency and thoughtful
+          choices—because what grows well
+          must also be grown responsibly
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+ <!-- ================= SUSTAINABILITY SECTION ============-->  
+
+<section class="sustainability-section">
+  <div class="container sustainability-wrapper">
+
+    <!-- LEFT SIDE -->
+    <div class="sustain-left">
+      <h2>Sustainability in<br>Full Bloom</h2>
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="sustain-right">
+
+      <p>
+        We grow with intention. By tending lands using regenerative
+        practices that prevent erosion and follow the rhythms of nature,
+        we ensure our flowers flourish sustainably. That means no shortcuts,
+        no forced blooms—only what the earth offers, when it's ready.
+      </p>
+
+      <p>
+        Our fields aren’t just sources of beauty; they're ecosystems we care
+        for with pride. Working closely with local growers and land stewards,
+        we minimize environmental impact while maximizing meaning.
+      </p>
+
+      <!-- Stats -->
+      <div class="sustain-stats">
+        <div>
+          <h3>500+</h3>
+          <span>Happy clients</span>
+        </div>
+
+        <div>
+          <h3>5</h3>
+          <span>Years of memories</span>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+  
+<section class="sustain-image-section">
+  <div class="container">
+    <div class="sustain-image-wrapper">
+      <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=2800,h=1007,fit=crop,trim=314.4963144963145;0;604.4226044226044;0/fiorentiaYKb8v/zoe-richardson-zpw1q-n_way-unsplash-YNq2xXyPNkIaJVzw.jpg" alt="Sustainability flowers">
+    </div>
+  </div>
+</section>
+
+
+<!-- ========= NEWSLETTER SECTION ============ -->
+
+  <section id="contact" class="newsletter-section py-5">
+  <div class="container">
+
+    <div class="row align-items-start gy-5">
+
+      <!-- LEFT SIDE -->
+      <div class="col-12 col-lg-7 text-center text-lg-start">
+
+        <h2 class="newsletter-title mb-3">
+          Join Our Bloom Letter
+        </h2>
+
+        <p class="newsletter-text mb-4">
+          Get fresh bouquet drops, plant care tips, exclusive discounts,
+          and more—delivered with love to your inbox.
+        </p>
+
+        <!-- FORM -->
+        <form class="newsletter-form mx-auto text-center ">
+          <input type="email"
+                 class="newsletter-input"
+                 placeholder="Your email address">
+
+          <button tpe="submit" class="newsletter-btn">
+            Submit
+          </button>
+        </form>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="col-12 col-lg-5 text-center text-lg-start">
+
+        <div class="mb-4">
+          <h5 class="mb-3">Contacts</h5>
+          <p class="mb-1">273 314 268</p>
+          <p class="mb-0">info@fiorentia.io</p>
+        </div>
+
+        <div>
+          <h5 class="mb-3">Social</h5>
+          <div class="d-flex justify-content-center justify-content-lg-start gap-3">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>

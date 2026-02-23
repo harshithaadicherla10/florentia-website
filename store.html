@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Florentia Website</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Puppies+Play&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ========== GLOBAL ========== */
+    html, body {
+    overflow-x: hidden;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #fff6e3;
+}
+
+/* ========== NAVBAR ========== */
+.navbar {
+    background-color: rgba(250, 244, 235, 0.85);   /* soft cream */
+    padding: 10px 0;
+}
+
+.navbar-brand {
+    font-family: 'Puppies play';
+    font-size: 40px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #2c2c2c !important;
+}
+
+.nav-link {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #5a5a5a !important;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: #b58e5f !important;
+    text-decoration: underline;
+}
+
+.active-link {
+    color: #8d6e48;
+    font-weight: bold;
+    /* padding-bottom: 5px; */
+    /* text-decoration: underline; */
+} 
+/* Shopping bag */
+.bag-icon {
+    font-size: 20px;
+    color: #333;
+}
+
+
+    /* Remove border */
+    .navbar-toggler {
+      border: none !important;
+      transition: background-color 0.3s ease;
+      padding: 6px 10px;
+      border-radius: 6px;
+      /* Slight rounded look */
+    }
+
+    /* Remove blue outline */
+    .navbar-toggler:focus {
+      outline: none !important;
+      box-shadow: none !important;
+    }
+
+    /* Default icon color (dark) */
+    .custom-toggler .navbar-toggler-icon {
+      filter: invert(28%) sepia(23%) saturate(800%) hue-rotate(100deg);
+    }
+
+    /* 🔥 When menu is open → background green */
+    .custom-toggler[aria-expanded="true"] {
+      background-color: rgb(138, 99, 66);
+    }
+
+    /* When open → make icon white for contrast */
+    .custom-toggler[aria-expanded="true"] .navbar-toggler-icon {
+      filter: brightness(0) invert(1);
+
+    }
+
+    /* navbar brand and icon */
+    .navbar-brand {
+      font-size: 22px;
+      letter-spacing: 0.5px;
+    }
+
+    .navbar-brand:hover .brand-icon {
+      transform: rotate(-10deg) scale(1.1);
+    }
+
+/* ===================== Store section =================== */
+
+.store-section {
+    background: #f2ecdf;
+    padding: 120px 20px;
+}
+
+/* Container */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Heading */
+.store-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.store-header h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 60px;
+    line-height: 1.2;
+}
+
+/* Controls */
+.store-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.search-box {
+    position: relative;
+    width: 300px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 14px 45px 14px 20px; 
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    background: #f5f4f2;
+    outline: none;
+    font-size: 14px;
+}
+
+.search-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 16px;
+    color: #555;
+    cursor: pointer;
+}
+
+.store-meta {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.sort-box select {
+    border: none;
+    background: transparent;
+    font-size: 14px;
+}
+
+/* Grid */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Card */
+.product-card h3 {
+    font-family: 'Playfair Display', serif;
+    margin: 20px 0 10px;
+    font-size: 20px;
+}
+
+.product-image {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    display: block;
+    border-radius: 20px;
+}
+
+/* Badge */
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+/* Price */
+.price {
+    margin-bottom: 15px;
+}
+
+.old-price {
+    text-decoration: line-through;
+    color: #aaa;
+    margin-right: 10px;
+}
+
+.new-price {
+    font-weight: 600;
+}
+
+/* Button */
+.add-btn {
+    width: 100%;
+    padding: 14px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    background: transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.add-btn:hover {
+    background: #1e2433;
+    color: white;
+}
+
+/* ============================= */
+/* NEWSLETTER SECTION */
+/* ============================= */
+.newsletter-section {
+    background-color: #1f2535;
+    color: #fff;
+    padding: 120px 20px;
+    text-align: center;
+}
+
+/* Title */
+.newsletter-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* Text */
+.newsletter-text {
+    max-width: 520px;
+    margin: 0 auto 35px;
+    line-height: 1.8;
+}
+
+/* FORM WRAPPER */
+.newsletter-form {
+    max-width: 420px;   /* 🔥 Important */
+    margin: 0 auto;
+}
+
+/* Input */
+.newsletter-input {
+    width: 100%;
+    padding: 16px 20px;
+    border-radius: 14px;
+    border: none;
+    background-color: #fef9f0;
+    margin-bottom: 20px;
+}
+
+/* Button */
+.newsletter-btn {
+    width: 180px;        /* 🔥 smaller button */
+    padding: 12px;
+    border-radius: 14px;
+    border: none;
+    background-color: #e6dac4;
+    font-weight: 500;
+}
+
+.newsletter-btn:hover{
+      background-color: #986e4c;
+      color: rgb(244, 222, 206);
+}
+</style>
+</head>
+
+<body>
+  <!-- ================= NAVBAR ===================== -->
+  <nav id="mainNavbar" class="navbar navbar-expand-lg fixed-top">
+    <div class="container-fluid ms-4">
+
+      <!-- Logo -->
+      <a class="navbar-brand" href="#">Florentia</a>
+
+      <!-- Toggle button (Mobile) -->
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse"
+        data-bs-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Menu -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarContent">
+        <ul class="navbar-nav gap-4 ms-auto me-5">
+          <li class="nav-item">
+            <a class="nav-link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#contact">Contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#store">Store</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Shopping Bag Icon -->
+      <div class="d-none d-lg-block">
+        <a href="#" class="bag-icon">
+          <i class="bi bi-bag"></i>
+        </a>
+      </div>
+
+    </div>
+  </nav>
+
+<!-- ================= Store SECTION ============-->  
+
+<section id="store" class="store-section">
+
+  <div class="container">
+
+    <!-- Heading -->
+    <div class="store-header">
+      <h2>Shop the Blooms<br>That Speak for You</h2>
+    </div>
+
+    <!-- Search + Sort -->
+    <div class="store-controls">
+
+      <div class="search-box">
+        <input type="text" placeholder="Search your bouquet"><i class="bi bi-search search-icon"></i>
+      </div>
+
+      <div class="store-meta">
+        <span>6 products</span>
+
+        <div class="sort-box">
+          <label>Sort by:</label>
+          <select>
+            <option>Default</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Most Recent</option>
+          </select>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Products Grid -->
+    <div class="product-grid">
+
+      <!-- Product Card -->
+      <div class="product-card">
+
+        <div class="product-image">
+          <span class="badge">3 days Left To Join</span>
+          <img src="https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1024,fit=crop,q=100/cdn-ecommerce/store_01KEY2V8REJC9CM0DC72D0GGP4/assets/f717dc0d-9a29-44d5-b405-3d4084b1d66a.png" alt="">
+        </div>
+
+        <h3>The First 90 Days Postpartum Recovery Guide</h3>
+
+        <div class="price">
+          <!-- <span class="old-price">AED 69.00</span> -->
+          <span class="new-price">$49.00</span>
+        </div>
+
+        <button class="add-btn">ADD TO BAG</button>
+
+      </div>
+
+      <!-- Product 2 -->
+      <div class="product-card">
+
+        <div class="product-image">
+          <img src="https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1024,fit=crop,q=100/cdn-ecommerce/demo_01G0E9P2R0CFTNBWEEFCEV8EG5%2Fassets%2Fimage-00.png" alt="">
+        </div>
+
+        <h3>Classic Cap</h3>
+
+        <div class="price">
+          <span class="new-price">$18.00</span>
+        </div>
+
+        <button class="add-btn">ADD TO BAG</button>
+
+      </div>
+
+      <!-- Product 3 -->
+      <div class="product-card">
+
+        <div class="product-image">
+          <img src="https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1024,fit=crop,q=100/cdn-ecommerce/demo_01G0E9P2R0CFTNBWEEFCEV8EG5%2Fassets%2Fimage-01.png" alt="">
+        </div>
+
+        <h3>Face Serum</h3>
+
+        <div class="price">
+          <span class="new-price">$51.00</span>
+        </div>
+
+        <button class="add-btn">ADD TO BAG</button>
+
+      </div>
+      
+       <!-- Product 4 -->
+      <div class="product-card">
+
+        <div class="product-image">
+          <img src="https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1024,fit=crop,q=100/cdn-ecommerce/demo_01G0E9P2R0CFTNBWEEFCEV8EG5%2Fassets%2Fimage-02.png" alt="">
+        </div>
+
+        <h3>Handmade Vase</h3>
+
+        <div class="price">
+          <span class="new-price">$25.00</span>
+        </div>
+
+        <button class="add-btn">ADD TO BAG</button>
+
+      </div>
+      
+       <!-- Product 5 -->
+      <div class="product-card">
+
+        <div class="product-image">
+          <img src="https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1024,fit=crop,q=100/cdn-ecommerce/demo_01G0E9P2R0CFTNBWEEFCEV8EG5%2Fassets%2Fimage-03.png" alt="">
+        </div>
+
+        <h3>Hand Soap</h3>
+
+        <div class="price">
+          <span class="new-price">$10.00</span>
+        </div>
+
+        <button class="add-btn">ADD TO BAG</button>
+
+      </div>
+      
+       <!-- Product 6 -->
+      <div class="product-card">
+
+        <div class="product-image">
+          <img src="https://cdn.zyrosite.com/cdn-cgi/image/format=auto,w=1024,h=1024,fit=crop,q=100/cdn-ecommerce/demo_01G0E9P2R0CFTNBWEEFCEV8EG5%2Fassets%2Fimage-04.png" alt="">
+        </div>
+
+        <h3>Set of Plates</h3>
+
+        <div class="price">
+          <span class="new-price">$30.00</span>
+        </div>
+
+        <button class="add-btn">ADD TO BAG</button>
+
+      </div>
+
+
+    </div>
+
+  </div>
+</section>
+
+  
+  
+
+<!-- ========= NEWSLETTER SECTION ============ -->
+
+  <section id="contact" class="newsletter-section py-5">
+  <div class="container">
+
+    <div class="row align-items-start gy-5">
+
+      <!-- LEFT SIDE -->
+      <div class="col-12 col-lg-7 text-center text-lg-start">
+
+        <h2 class="newsletter-title mb-3">
+          Join Our Bloom Letter
+        </h2>
+
+        <p class="newsletter-text mb-4">
+          Get fresh bouquet drops, plant care tips, exclusive discounts,
+          and more—delivered with love to your inbox.
+        </p>
+
+        <!-- FORM -->
+        <form class="newsletter-form mx-auto text-center ">
+          <input type="email"
+                 class="newsletter-input"
+                 placeholder="Your email address">
+
+          <button tpe="submit" class="newsletter-btn">
+            Submit
+          </button>
+        </form>
+
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="col-12 col-lg-5 text-center text-lg-start">
+
+        <div class="mb-4">
+          <h5 class="mb-3">Contacts</h5>
+          <p class="mb-1">273 314 268</p>
+          <p class="mb-0">info@fiorentia.io</p>
+        </div>
+
+        <div>
+          <h5 class="mb-3">Social</h5>
+          <div class="d-flex justify-content-center justify-content-lg-start gap-3">
+            <i class="bi bi-facebook"></i>
+            <i class="bi bi-twitter-x"></i>
+            <i class="bi bi-instagram"></i>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
